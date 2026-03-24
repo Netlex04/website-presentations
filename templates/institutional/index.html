@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Institutional Presentation Template</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!--
+  ============================================
+  DEVELOPER GUIDANCE: INSTITUTIONAL TEMPLATE
+  ============================================
+
+  AVAILABLE SLIDE TYPES:
+  - hero:        Title slide with strong institutional header
+  - definition:  Definition / overview / explanation with supporting cards
+  - split:       Two-column layout with text and emphasis cards
+  - highlight:   Two-panel spotlight slide for concepts / distinctions
+  - flow:        Transmission / process / cause-effect chain
+  - summary:     Summary / key takeaways / closing slide
+
+  HOW TO DUPLICATE A SLIDE:
+  1. Copy any <section class="slide ..."> block
+  2. Paste it after the existing slides
+  3. Update data-slide-type if needed
+  4. Replace placeholder text inside brackets [Like This]
+
+  REPLACEABLE CONTENT CLASSES:
+  - .slide-label
+  - .slide-title
+  - .slide-subtitle
+  - .slide-body
+  - .card-title
+  - .card-text
+  - .stat-value
+  - .stat-label
+  - .step-title
+  - .step-text
+  - .quote-text
+
+  PLACEHOLDER INDICATORS:
+  All text inside [Brackets] is placeholder content and should be
+  replaced during content generation.
+
+  NOTES:
+  - This template is intended for academic, institutional, educational,
+    policy, finance, or formal presentations.
+  - Keep the tone clear, structured, and trustworthy.
+  - Use visual restraint and strong hierarchy instead of flashy styling.
+  ============================================
+  -->
+
+    <div class="progress-shell" aria-hidden="true">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <nav class="slide-nav" aria-label="Slide navigation" id="slideNav"></nav>
+
+    <div class="nav-hint sr-only">
+      Navigation with arrow keys, Page Up/Down, Home and End.
+    </div>
+
+    <main class="presentation" id="presentation">
+      <!-- SLIDE TYPE: HERO -->
+      <!-- PURPOSE: Intro / title / opening statement -->
+      <section
+        class="slide slide-hero"
+        data-slide-type="hero"
+        data-slide-index="0"
+        aria-label="Slide 1"
+      >
+        <div class="slide-content hero-layout">
+          <header class="slide-header centered">
+            <span class="slide-label">[Presentation Category]</span>
+            <h1 class="slide-title display-xl">[Presentation Title]</h1>
+            <div class="hero-divider"></div>
+            <p class="slide-subtitle hero-subtitle">
+              [Short supporting statement explaining the topic, context, or
+              objective]
+            </p>
+          </header>
+
+          <div class="meta-row">
+            <div class="meta-item">[Context or course]</div>
+            <div class="meta-separator"></div>
+            <div class="meta-item">[Duration or format]</div>
+          </div>
+
+          <div class="hero-mark" aria-hidden="true">
+            <div class="mark-ring"></div>
+            <div class="mark-core"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE TYPE: DEFINITION -->
+      <!-- PURPOSE: Definition / concept introduction / overview -->
+      <section
+        class="slide slide-definition"
+        data-slide-type="definition"
+        data-slide-index="1"
+        aria-label="Slide 2"
+      >
+        <div class="slide-content">
+          <header class="slide-header">
+            <span class="slide-label">[Section Label]</span>
+            <h2 class="slide-title display-lg">
+              [Definition or Overview Heading]
+            </h2>
+          </header>
+
+          <div class="quote-panel">
+            <p class="quote-text">
+              [Insert a central definition, thesis, or explanatory statement
+              that anchors the section]
+            </p>
+          </div>
+
+          <div class="cards-grid cards-grid-3">
+            <article class="info-card">
+              <div class="card-badge"></div>
+              <h3 class="card-title">[Aspect One]</h3>
+              <p class="card-text">
+                [Short explanation of the first aspect, mechanism, or component]
+              </p>
+            </article>
+
+            <article class="info-card">
+              <div class="card-badge"></div>
+              <h3 class="card-title">[Aspect Two]</h3>
+              <p class="card-text">
+                [Short explanation of the second aspect, mechanism, or
+                component]
+              </p>
+            </article>
+
+            <article class="info-card">
+              <div class="card-badge"></div>
+              <h3 class="card-title">[Aspect Three]</h3>
+              <p class="card-text">
+                [Short explanation of the third aspect, mechanism, or component]
+              </p>
+            </article>
+          </div>
+
+          <div class="chain-row" aria-hidden="true">
+            <div class="chain-node">
+              <div class="chain-icon"></div>
+              <span>[Source]</span>
+            </div>
+            <div class="chain-line"></div>
+            <div class="chain-node outline">
+              <div class="chain-icon"></div>
+              <span>[Intermediary]</span>
+            </div>
+            <div class="chain-line"></div>
+            <div class="chain-node muted">
+              <div class="chain-icon"></div>
+              <span>[Target]</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE TYPE: SPLIT -->
+      <!-- PURPOSE: Main instrument / explanation with comparison cards -->
+      <section
+        class="slide slide-split"
+        data-slide-type="split"
+        data-slide-index="2"
+        aria-label="Slide 3"
+      >
+        <div class="slide-content split-layout">
+          <div class="split-main">
+            <header class="slide-header align-left">
+              <span class="slide-label">[Primary Label]</span>
+              <h2 class="slide-title display-lg">
+                [Main Instrument or Concept]
+              </h2>
+              <p class="slide-subtitle">
+                [Brief explanation of why this concept matters and how it
+                functions]
+              </p>
+            </header>
+
+            <div class="feature-stack">
+              <div class="feature-item">
+                <div class="feature-marker"></div>
+                <div>
+                  <h3 class="step-title">[Key Point One]</h3>
+                  <p class="step-text">
+                    [Supporting explanation for the first key point]
+                  </p>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <div class="feature-marker"></div>
+                <div>
+                  <h3 class="step-title">[Key Point Two]</h3>
+                  <p class="step-text">
+                    [Supporting explanation for the second key point]
+                  </p>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <div class="feature-marker"></div>
+                <div>
+                  <h3 class="step-title">[Key Point Three]</h3>
+                  <p class="step-text">
+                    [Supporting explanation for the third key point]
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="split-side">
+            <article class="signal-card signal-card-negative">
+              <span class="signal-label">[Scenario A]</span>
+              <h3 class="card-title">[Restrictive / Upward / Higher]</h3>
+              <p class="card-text">
+                [Explain a negative, restrictive, or tightening effect]
+              </p>
+            </article>
+
+            <article class="signal-card signal-card-positive">
+              <span class="signal-label">[Scenario B]</span>
+              <h3 class="card-title">[Expansive / Downward / Lower]</h3>
+              <p class="card-text">
+                [Explain a positive, expansive, or easing effect]
+              </p>
+            </article>
+
+            <div class="stat-panel">
+              <div class="stat-value">[Key Figure]</div>
+              <div class="stat-label">[Short explanation of the figure]</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE TYPE: HIGHLIGHT -->
+      <!-- PURPOSE: Long-term support / two-panel emphasis -->
+      <section
+        class="slide slide-highlight"
+        data-slide-type="highlight"
+        data-slide-index="3"
+        aria-label="Slide 4"
+      >
+        <div class="slide-content">
+          <header class="slide-header centered">
+            <span class="slide-label">[Section Label]</span>
+            <h2 class="slide-title display-lg">
+              [Extended or Long-Term Instrument]
+            </h2>
+          </header>
+
+          <div class="highlight-grid">
+            <article class="panel-card">
+              <div class="panel-icon"></div>
+              <h3 class="card-title">[Core Function]</h3>
+              <p class="card-text">
+                [Describe the central role, objective, or long-term function of
+                this instrument]
+              </p>
+              <ul class="bullet-list">
+                <li>[Supporting point one]</li>
+                <li>[Supporting point two]</li>
+                <li>[Supporting point three]</li>
+              </ul>
+            </article>
+
+            <article class="panel-card panel-card-accent">
+              <span class="slide-label alt">[Special Variant]</span>
+              <h3 class="slide-title display-md">[Targeted Variant Name]</h3>
+              <p class="slide-subtitle">
+                [Explain how this targeted or special form differs from the
+                general instrument]
+              </p>
+
+              <div class="focus-box">
+                <p>
+                  [Insert a concise explanation of the targeted condition,
+                  incentive, or strategic purpose]
+                </p>
+              </div>
+
+              <div class="mini-meta">[One-line takeaway or incentive]</div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE TYPE: FLOW -->
+      <!-- PURPOSE: Transmission chain / workflow / cause-effect -->
+      <section
+        class="slide slide-flow"
+        data-slide-type="flow"
+        data-slide-index="4"
+        aria-label="Slide 5"
+      >
+        <div class="slide-content">
+          <header class="slide-header centered">
+            <span class="slide-label">[Process Label]</span>
+            <h2 class="slide-title display-lg">
+              [Transmission or Process Heading]
+            </h2>
+            <p class="slide-subtitle">
+              [Brief explanation of how one variable influences the next]
+            </p>
+          </header>
+
+          <div class="flow-grid">
+            <div class="flow-step">
+              <div class="flow-square"></div>
+              <h3 class="step-title">[Step One]</h3>
+              <p class="step-text">[Short label or explanation]</p>
+            </div>
+
+            <div class="flow-connector" aria-hidden="true"></div>
+
+            <div class="flow-step">
+              <div class="flow-square alt"></div>
+              <h3 class="step-title">[Step Two]</h3>
+              <p class="step-text">[Short label or explanation]</p>
+            </div>
+
+            <div class="flow-connector" aria-hidden="true"></div>
+
+            <div class="flow-step">
+              <div class="flow-square soft"></div>
+              <h3 class="step-title">[Step Three]</h3>
+              <p class="step-text">[Short label or explanation]</p>
+            </div>
+
+            <div class="flow-connector" aria-hidden="true"></div>
+
+            <div class="flow-step">
+              <div class="flow-square pale"></div>
+              <h3 class="step-title">[Step Four]</h3>
+              <p class="step-text">[Short label or explanation]</p>
+            </div>
+
+            <div class="flow-connector" aria-hidden="true"></div>
+
+            <div class="flow-step">
+              <div class="flow-square strong"></div>
+              <h3 class="step-title">[Step Five]</h3>
+              <p class="step-text">[Short label or explanation]</p>
+            </div>
+          </div>
+
+          <div class="cards-grid cards-grid-3 compact">
+            <article class="mini-card">
+              <h3 class="card-title">[Impact One]</h3>
+              <p class="card-text">
+                [Explain the first implication or applied outcome]
+              </p>
+            </article>
+
+            <article class="mini-card">
+              <h3 class="card-title">[Impact Two]</h3>
+              <p class="card-text">
+                [Explain the second implication or applied outcome]
+              </p>
+            </article>
+
+            <article class="mini-card">
+              <h3 class="card-title">[Impact Three]</h3>
+              <p class="card-text">
+                [Explain the third implication or applied outcome]
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE TYPE: SUMMARY -->
+      <!-- PURPOSE: Summary / key takeaways / closing -->
+      <section
+        class="slide slide-summary"
+        data-slide-type="summary"
+        data-slide-index="5"
+        aria-label="Slide 6"
+      >
+        <div class="slide-content">
+          <header class="slide-header centered">
+            <span class="slide-label light">[Closing Label]</span>
+            <h2 class="slide-title display-lg">[Summary Heading]</h2>
+          </header>
+
+          <div class="cards-grid cards-grid-2">
+            <article class="summary-card">
+              <h3 class="card-title">[Takeaway One]</h3>
+              <p class="card-text">
+                [Short summary of the first main takeaway]
+              </p>
+            </article>
+
+            <article class="summary-card">
+              <h3 class="card-title">[Takeaway Two]</h3>
+              <p class="card-text">
+                [Short summary of the second main takeaway]
+              </p>
+            </article>
+
+            <article class="summary-card">
+              <h3 class="card-title">[Takeaway Three]</h3>
+              <p class="card-text">
+                [Short summary of the third main takeaway]
+              </p>
+            </article>
+
+            <article class="summary-card">
+              <h3 class="card-title">[Takeaway Four]</h3>
+              <p class="card-text">
+                [Short summary of the fourth main takeaway]
+              </p>
+            </article>
+          </div>
+
+          <div class="closing-quote">
+            <p class="quote-text">
+              [Insert final thesis, summary sentence, or memorable closing
+              statement]
+            </p>
+          </div>
+
+          <div class="restart-area">
+            <button class="restart-button" type="button" id="restartButton">
+              [Restart presentation or CTA]
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
