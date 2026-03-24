@@ -2,14 +2,14 @@
 
 ## Ziel
 
-Erstelle aus gelieferten Inhalten eine neue Präsentation auf Basis vorhandener Templates und Komponenten aus diesem Repository.
+Erstelle aus gelieferten Inhalten eine neue Präsentation auf Basis vorhandener Templates aus diesem Repository.
 
 Die Präsentation soll:
 
 - einen auswählbaren Stil verwenden,
 - Inhalte entweder übernehmen oder zuerst sauber strukturieren,
 - pro logischer Section genau **eine Slide** erzeugen,
-- wiederverwendbare Komponenten aus dem Repository nutzen,
+- die vorhandene Template-Struktur konsistent wiederverwenden,
 - am Ende als neue Präsentation im Ordner `dist/` ausgegeben werden.
 
 ---
@@ -21,19 +21,46 @@ Die Arbeitslogik basiert auf dieser Struktur:
 ```txt
 /templates
   /<template-name>
-    /slides
-    /components
-    /assets
+    index.html
+    styles.css
+    script.js
+    README.md (optional)
 /instructions
   instruction.md
 /dist
+  /<presentation-name>-<style>
+    index.html
+    styles.css
+    script.js
 ```
 
 ### Bedeutung
 
-- `templates/`: Enthält fertige Präsentationsstile, Folienlayouts, Bausteine und Assets.
+- `templates/`: Enthält fertige Präsentationsstile als vollständige HTML/CSS/JS-Templates.
+- `templates/<template-name>/index.html`: Basisstruktur der Präsentation mit allen verfügbaren Slide-Typen.
+- `templates/<template-name>/styles.css`: Styling, Variablen, Layout-System und responsive Regeln des Templates.
+- `templates/<template-name>/script.js`: Navigation, Scroll-Verhalten und optionale Interaktionen.
+- `templates/<template-name>/README.md`: optionale Dokumentation zu Slide-Typen, Platzhaltern und ersetzbaren Bereichen.
 - `instructions/`: Enthält diese Arbeitsanweisung, z. B. für Copilot oder andere Agents.
-- `dist/`: Hier wird die neu generierte Präsentation abgelegt.
+- `dist/`: Hier wird die neu generierte Präsentation als eigener Ordner abgelegt.
+
+---
+
+## Template-Verständnis
+
+Ein Template ist in diesem Repository **kein Baukasten aus separaten `slides/`- oder `components/`-Ordnern**, sondern ein vollständiges, lokal lauffähiges Präsentations-Template mit:
+
+- `index.html` als strukturelle Basis,
+- `styles.css` als visuelles System,
+- `script.js` für Navigation und Interaktionen.
+
+Die Wiederverwendung erfolgt über:
+
+- vorhandene Slide-Typen in der HTML,
+- klar benannte Klassen,
+- Platzhaltertexte,
+- `data-slide-type`-Attribute,
+- ggf. dokumentierte ersetzbare Bereiche im Template.
 
 ---
 
@@ -56,8 +83,8 @@ Frage zuerst:
 > Du kannst:
 >
 > 1. ein bestehendes Template direkt auswählen,
-> 2. ein bestehendes Template leicht abwandeln,
-> 3. einen neuen Stil auf Basis vorhandener Components erstellen.
+> 2. ein bestehendes Template leicht anpassen,
+> 3. einen neuen Stil auf Basis eines bestehenden Templates entwickeln.
 
 Wenn der Nutzer einen neuen Stil möchte, frage direkt nach:
 
@@ -236,16 +263,38 @@ Folgende Regeln gelten immer:
 
 ---
 
-### 3. Templates und Components wiederverwenden
+### 3. Vorhandene Template-Struktur wiederverwenden
 
-- Nutze bevorzugt vorhandene Components aus `templates/<template-name>/components`.
-- Nutze vorhandene Slide-Strukturen aus `templates/<template-name>/slides`.
-- Erfinde nur dann neue Layouts, wenn der Inhalt mit vorhandenen Komponenten nicht sinnvoll dargestellt werden kann.
-- Wenn ein neuer Stil aus Bestehendem gebaut wird, kombiniere vorhandene Komponenten konsistent.
+- Nutze die vorhandene `index.html` des gewählten Templates als strukturelle Basis.
+- Wiederverwende vorhandene Slide-Typen über ihre HTML-Struktur und `data-slide-type`-Attribute.
+- Ersetze bevorzugt nur Inhalte, Labels, Titel, Listen, KPIs, Texte und Platzhalter.
+- Passe `styles.css` nur dann an, wenn Branding, Farbwelt oder Stil gezielt verändert werden sollen.
+- Passe `script.js` nur dann an, wenn neue Navigation, Interaktionen oder spezielle Verhaltensweisen nötig sind.
+- Erfinde nur dann neue Slide-Typen oder Layouts, wenn der Inhalt mit den vorhandenen Strukturen nicht sinnvoll dargestellt werden kann.
 
 ---
 
-### 4. Konsistenz sichern
+### 4. Typische ersetzbare Bereiche im Template
+
+Achte besonders auf diese typischen Klassen bzw. Inhaltsbereiche:
+
+- `.slide-label`
+- `.slide-title`
+- `.slide-subtitle`
+- `.slide-body`
+- `.content-list`
+- `.card-title`
+- `.card-text`
+- `.kpi-value`
+- `.kpi-label`
+- `.kpi-context`
+- visuelle Platzhalter wie `.visual-placeholder`
+
+Falls das Template eine eigene Dokumentation oder Kommentarblöcke enthält, nutze diese als primäre Orientierung.
+
+---
+
+### 5. Konsistenz sichern
 
 Achte auf:
 
@@ -254,24 +303,25 @@ Achte auf:
 - konsistente Farbverwendung,
 - konsistente Bildsprache,
 - einheitliche Überschriftenlogik,
-- wiederkehrende Komponenten für ähnliche Inhalte.
+- wiederkehrende Layoutmuster für ähnliche Inhalte.
 
 ---
 
-### 5. Visuelle Zuordnung der Inhalte
+### 6. Visuelle Zuordnung der Inhalte
 
 Wähle je nach Inhalt passende Darstellungsformen:
 
-- Vergleich → Zwei-Spalten-Layout
-- Prozess → Timeline / Step-Layout
-- Kennzahlen → KPI-Grid
-- Vorteile / Features → Card-Layout
-- Problem / Lösung → Split-Layout
-- Abschluss → CTA- oder Summary-Slide
+- Vergleich → Two-Column Slide
+- Prozess → Process / Steps Slide
+- Kennzahlen → KPI Slide
+- Vorteile / Features → Cards Slide
+- Problem / Lösung → Text oder Two-Column Slide
+- Screenshot / Diagramm → Image / Visual Slide
+- Abschluss → Closing / Summary Slide
 
 ---
 
-### 6. Qualität vor Vollständigkeit
+### 7. Qualität vor Vollständigkeit
 
 Falls Inhalte schlecht strukturiert, redundant oder zu lang sind:
 
@@ -287,21 +337,24 @@ Falls Inhalte schlecht strukturiert, redundant oder zu lang sind:
 
 Dann:
 
-1. Template laden
-2. Inhalte analysieren
-3. Sections erkennen
-4. Slides erzeugen
-5. neue Präsentation in `dist/` ausgeben
+1. Template in `templates/<template-name>/` laden
+2. `index.html`, `styles.css` und `script.js` als Basis übernehmen
+3. Inhalte analysieren
+4. Sections erkennen
+5. passende vorhandene Slide-Typen auswählen
+6. Inhalte in die bestehenden Template-Bereiche einsetzen
+7. neue Präsentation in `dist/` ausgeben
 
 ### Wenn der Nutzer einen neuen Stil möchte
 
 Dann:
 
-1. ähnliche Templates identifizieren
-2. deren Components wiederverwenden
-3. Stilregeln für den neuen Mix definieren
-4. darauf basierend Slides erzeugen
-5. Ergebnis in `dist/` ausgeben
+1. ein ähnliches bestehendes Template als Basis identifizieren
+2. dessen HTML-Struktur übernehmen
+3. Stilregeln für Farben, Tonalität und Visualität definieren
+4. bei Bedarf `styles.css` anpassen
+5. Inhalte auf vorhandene oder leicht erweiterte Slide-Typen mappen
+6. Ergebnis in `dist/` ausgeben
 
 ### Wenn nur Rohtext geliefert wird
 
@@ -310,9 +363,10 @@ Dann:
 1. Text säubern
 2. Sections bilden
 3. Reihenfolge logisch strukturieren
-4. Stil anwenden
-5. Slides generieren
-6. Ergebnis in `dist/` ausgeben
+4. passenden Stil anwenden
+5. geeignete Slide-Typen aus dem Template auswählen
+6. Inhalte einsetzen
+7. Ergebnis in `dist/` ausgeben
 
 ---
 
@@ -324,14 +378,15 @@ Die Ausgabe soll:
 - eindeutig benannt sein,
 - die gewählte Stilrichtung erkennen lassen,
 - alle finalen Inhalte enthalten,
-- direkt nutzbar oder leicht weiterbearbeitbar sein.
+- direkt lokal nutzbar oder leicht weiterbearbeitbar sein.
 
 ### Beispiel für Benennung
 
-````txt
-/dist/<presentation-name>-<style>/index.html
 ```txt
-````
+/dist/<presentation-name>-<style>/index.html
+/dist/<presentation-name>-<style>/styles.css
+/dist/<presentation-name>-<style>/script.js
+```
 
 ---
 
@@ -355,6 +410,7 @@ Prüfe vor der Ausgabe:
 - gibt es doppelte Aussagen?
 - fehlt eine Einleitung oder ein Abschluss?
 - passt die Sprache zur Zielgruppe?
+- wurden Platzhalter vollständig ersetzt?
 
 ### C. Optionaler Cover- und End-Slide-Modus
 
@@ -370,10 +426,10 @@ Aber nur dann, wenn diese zur Präsentationsart passen und nicht künstlich wirk
 
 Wenn keine Bilder vorhanden sind:
 
-- nutze Icons,
-- abstrakte Shapes,
-- Platzhalter,
-- diagrammartige Komponenten.
+- nutze vorhandene visuelle Platzhalter,
+- abstrahierte SVGs,
+- einfache diagrammartige Flächen,
+- textliche Bildhinweise.
 
 ---
 
@@ -387,7 +443,6 @@ Wenn Angaben fehlen, priorisiere diese Reihenfolge:
 4. Zielgruppe
 5. Umfang
 6. Branding
-7. Ausgabeformat
 
 Treffe ansonsten sinnvolle Standardannahmen und dokumentiere sie kurz.
 
@@ -402,9 +457,10 @@ Wenn Informationen fehlen, nutze diese Defaults:
 - Umfang: kompakt
 - Visualisierung: moderat, nicht überladen
 - Ziel: informativ mit klarer Storyline
+- Basis: vorhandenes Template ohne strukturelle Änderungen
 
 ---
 
 ## Endziel
 
-Am Ende soll aus vorhandenen oder rohen Inhalten automatisch eine stilistisch konsistente Präsentation entstehen, die vorhandene Templates und Components nutzt, logisch strukturierte Sections in Slides übersetzt und das Ergebnis im Ordner `dist/` bereitstellt.
+Am Ende soll aus vorhandenen oder rohen Inhalten automatisch eine stilistisch konsistente Präsentation entstehen, die ein vorhandenes HTML/CSS/JS-Template sinnvoll wiederverwendet, logisch strukturierte Sections in Slides übersetzt und das Ergebnis vollständig im Ordner `dist/` bereitstellt.

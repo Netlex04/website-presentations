@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Presentation Template</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- 
+    TEMPLATE USAGE GUIDE:
+    
+    AVAILABLE SLIDE TYPES:
+    - hero: Full-screen title slide with optional subtitle and CTA
+    - text: Title with bullet points or paragraph content
+    - two-column: Side-by-side text and visual layout
+    - cards: 2-4 feature cards in a grid
+    - process: Horizontal step indicators (3-5 steps)
+    - kpi: Large metric numbers with labels
+    - image: Visual placeholder with caption
+    - closing: Dark themed summary/CTA slide
+    
+    HOW TO DUPLICATE A SLIDE:
+    1. Copy any <section class="slide ..."> block
+    2. Change the data-slide-type attribute to match desired type
+    3. Update content inside .slide-title, .slide-subtitle, .slide-body
+    4. Add specific modifier class if needed (e.g., .slide-dark)
+    
+    REPLACEABLE CONTENT CLASSES:
+    - .slide-label: Small eyebrow text above title
+    - .slide-title: Main heading (h1 for hero, h2 for others)
+    - .slide-subtitle: Secondary text below title
+    - .slide-body: Main content area (paragraphs, lists, cards)
+    - .placeholder-text: Any [bracketed] placeholder content
+    - .kpi-value: Large metric numbers
+    - .kpi-label: Metric descriptions
+    - .card-title: Feature card headings
+    - .card-text: Card body content
+    
+    PLACEHOLDER CONVENTIONS:
+    Text in [brackets] indicates AI-replaceable content.
+    Visual placeholders use .visual-placeholder class.
+  --></head>
+  <body>
+    <!-- Progress indicator -->
+    <div class="progress-bar" aria-hidden="true">
+      <div class="progress-fill"></div>
+    </div>
+
+    <!-- Navigation dots (auto-populated by JS) -->
+    <nav class="slide-nav" aria-label="Slide navigation"></nav>
+
+    <main class="presentation-container">
+      <!-- SLIDE TYPE: HERO -->
+      <!-- PURPOSE: Intro / Title / Opening statement -->
+      <section class="slide slide-hero" data-slide-type="hero">
+        <div class="slide-content">
+          <!-- COMPONENT: slide-header -->
+          <header class="slide-header">
+            <span class="slide-label">[Category Label]</span>
+            <h1 class="slide-title">[Presentation Title]</h1>
+            <p class="slide-subtitle">
+              [Short compelling subtitle that explains the core value
+              proposition in one line]
+            </p>
+          </header>
+
+          <!-- COMPONENT: cta-placeholder -->
+          <div class="cta-area">
+            <span class="placeholder-note"
+              >[CTA Button or Date/Author info]</span
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE TYPE: TEXT -->
+      <!-- PURPOSE: Content overview / Bullet points / Text-heavy explanations -->
+      <section class="slide slide-text" data-slide-type="text">
+        <div class="slide-content">
+          <header class="slide-header">
+            <span class="slide-label">[Section Label]</span>
+            <h2 class="slide-title">[Section Heading]</h2>
+            <p class="slide-subtitle">
+              [Optional context paragraph introducing this section's content]
+            </p>
+          </header>
+
+          <!-- COMPONENT: content-list -->
+          <div class="slide-body">
+            <ul class="content-list">
+              <li>
+                [First key point or argument supporting the section topic]
+              </li>
+              <li>[Second important detail or feature description]</li>
+              <li>[Third point with supporting context]</li>
+              <li>[Fourth optional point or conclusion statement]</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE TYPE: TWO-COLUMN -->
+      <!-- PURPOSE: Text + Visual / Compare and contrast / Explanation with diagram -->
+      <section class="slide slide-two-column" data-slide-type="two-column">
+        <div class="slide-content">
+          <header class="slide-header">
+            <span class="slide-label">[Section Label]</span>
+            <h2 class="slide-title">[Two-Column Layout Heading]</h2>
+          </header>
+
+          <div class="two-column-grid">
+            <!-- Left: Text content -->
+            <div class="column-text">
+              <div class="slide-body">
+                <p>
+                  [Primary content text explaining the concept, feature, or
+                  solution. Keep to 2-3 short paragraphs.]
+                </p>
+                <p>[Additional supporting context or secondary explanation.]</p>
+              </div>
+              <ul class="content-list compact">
+                <li>[Supporting point A]</li>
+                <li>[Supporting point B]</li>
+              </ul>
+            </div>
+
+            <!-- Right: Visual placeholder -->
+            <!-- COMPONENT: visual-placeholder -->
+            <div class="column-visual">
+              <div class="visual-placeholder">
+                <div class="placeholder-graphic">
+                  <!-- Inline SVG placeholder icon -->
+                  <svg
+                    width="64"
+                    height="64"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    aria-hidden="true"
+                  >
+                    <rect
+                      x="3"
+                      y="3"
+                      width="18"
+                      height="18"
+                      rx="2"
+                      ry="2"
+                    ></rect>
+                    <line x1="9" y1="9" x2="15" y2="15"></line>
+                    <line x1="15" y1="9" x2="9" y2="15"></line>
+                  </svg>
+                </div>
+                <span class="placeholder-caption"
+                  >[Insert image or diagram here]</span
+                >
+                <span class="placeholder-meta"
+                  >Recommended: 4:3 or 16:9 ratio</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE TYPE: CARDS -->
+      <!-- PURPOSE: Features / Benefits / Service offerings / Product components -->
+      <section class="slide slide-cards" data-slide-type="cards">
+        <div class="slide-content">
+          <header class="slide-header">
+            <span class="slide-label">[Features Label]</span>
+            <h2 class="slide-title">[Cards Grid Heading]</h2>
+            <p class="slide-subtitle">
+              [Optional description of the feature set or component overview]
+            </p>
+          </header>
+
+          <div class="slide-body">
+            <!-- COMPONENT: card-grid -->
+            <div class="card-grid">
+              <!-- COMPONENT: card -->
+              <article class="card">
+                <div class="card-icon">
+                  <svg
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    aria-hidden="true"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                  </svg>
+                </div>
+                <h3 class="card-title">[Feature One]</h3>
+                <p class="card-text">
+                  [Short description of this feature or component and its
+                  primary benefit]
+                </p>
+              </article>
+
+              <article class="card">
+                <div class="card-icon">
+                  <svg
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    aria-hidden="true"
+                  >
+                    <polygon
+                      points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"
+                    ></polygon>
+                  </svg>
+                </div>
+                <h3 class="card-title">[Feature Two]</h3>
+                <p class="card-text">
+                  [Description of the second key component or capability
+                  offered]
+                </p>
+              </article>
+
+              <article class="card">
+                <div class="card-icon">
+                  <svg
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    aria-hidden="true"
+                  >
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                    <path d="M2 17l10 5 10-5"></path>
+                    <path d="M2 12l10 5 10-5"></path>
+                  </svg>
+                </div>
+                <h3 class="card-title">[Feature Three]</h3>
+                <p class="card-text">
+                  [Third feature description highlighting unique value or
+                  functionality]
+                </p>
+              </article>
+
+              <article class="card">
+                <div class="card-icon">
+                  <svg
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    aria-hidden="true"
+                  >
+                    <rect
+                      x="2"
+                      y="3"
+                      width="20"
+                      height="14"
+                      rx="2"
+                      ry="2"
+                    ></rect>
+                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                  </svg>
+                </div>
+                <h3 class="card-title">[Feature Four]</h3>
+                <p class="card-text">
+                  [Fourth feature or benefit completing the set of capabilities]
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE TYPE: PROCESS -->
+      <!-- PURPOSE: Workflow / Timeline / Step-by-step methodology / How it works -->
+      <section class="slide slide-process" data-slide-type="process">
+        <div class="slide-content">
+          <header class="slide-header">
+            <span class="slide-label">[Process Label]</span>
+            <h2 class="slide-title">[Process or Steps Heading]</h2>
+            <p class="slide-subtitle">
+              [Overview of the methodology or workflow sequence]
+            </p>
+          </header>
+
+          <div class="slide-body">
+            <!-- COMPONENT: process-steps -->
+            <div class="process-steps">
+              <div class="step">
+                <div class="step-number">01</div>
+                <h3 class="step-title">[Step Name]</h3>
+                <p class="step-description">
+                  [Brief description of this phase or action]
+                </p>
+              </div>
+
+              <div class="step-connector" aria-hidden="true">
+                <svg
+                  width="40"
+                  height="24"
+                  viewBox="0 0 40 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <line x1="0" y1="12" x2="36" y2="12"></line>
+                  <polyline points="28,6 36,12 28,18"></polyline>
+                </svg>
+              </div>
+
+              <div class="step">
+                <div class="step-number">02</div>
+                <h3 class="step-title">[Step Name]</h3>
+                <p class="step-description">
+                  [Description of second phase or operation]
+                </p>
+              </div>
+
+              <div class="step-connector" aria-hidden="true">
+                <svg
+                  width="40"
+                  height="24"
+                  viewBox="0 0 40 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <line x1="0" y1="12" x2="36" y2="12"></line>
+                  <polyline points="28,6 36,12 28,18"></polyline>
+                </svg>
+              </div>
+
+              <div class="step">
+                <div class="step-number">03</div>
+                <h3 class="step-title">[Step Name]</h3>
+                <p class="step-description">
+                  [Third step explanation and expected outcome]
+                </p>
+              </div>
+
+              <div class="step-connector" aria-hidden="true">
+                <svg
+                  width="40"
+                  height="24"
+                  viewBox="0 0 40 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <line x1="0" y1="12" x2="36" y2="12"></line>
+                  <polyline points="28,6 36,12 28,18"></polyline>
+                </svg>
+              </div>
+
+              <div class="step">
+                <div class="step-number">04</div>
+                <h3 class="step-title">[Step Name]</h3>
+                <p class="step-description">
+                  [Final step and resolution description]
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE TYPE: KPI -->
+      <!-- PURPOSE: Metrics / Statistics / Key results / Data highlights -->
+      <section class="slide slide-kpi" data-slide-type="kpi">
+        <div class="slide-content">
+          <header class="slide-header">
+            <span class="slide-label">[Metrics Label]</span>
+            <h2 class="slide-title">[Key Performance Indicators]</h2>
+            <p class="slide-subtitle">[Context for the data presented below]</p>
+          </header>
+
+          <div class="slide-body">
+            <!-- COMPONENT: kpi-grid -->
+            <div class="kpi-grid">
+              <div class="kpi-item">
+                <div class="kpi-value">[XX%]</div>
+                <div class="kpi-label">[Primary Metric Description]</div>
+                <div class="kpi-context">
+                  [Supporting context or time period]
+                </div>
+              </div>
+
+              <div class="kpi-item">
+                <div class="kpi-value">[XXX]</div>
+                <div class="kpi-label">[Secondary Metric Name]</div>
+                <div class="kpi-context">[Additional statistical context]</div>
+              </div>
+
+              <div class="kpi-item">
+                <div class="kpi-value">[X.Xx]</div>
+                <div class="kpi-label">[Growth or Efficiency Metric]</div>
+                <div class="kpi-context">[Comparison baseline or note]</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE TYPE: IMAGE -->
+      <!-- PURPOSE: Full visual / Screenshot / Diagram / Photo with caption -->
+      <section class="slide slide-image" data-slide-type="image">
+        <div class="slide-content">
+          <header class="slide-header">
+            <span class="slide-label">[Visual Label]</span>
+            <h2 class="slide-title">[Image or Diagram Title]</h2>
+          </header>
+
+          <div class="slide-body">
+            <!-- COMPONENT: visual-placeholder (large variant) -->
+            <div class="visual-placeholder large">
+              <div class="placeholder-graphic wide">
+                <svg
+                  width="96"
+                  height="96"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1"
+                  aria-hidden="true"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                  <polyline points="21 15 16 10 5 21"></polyline>
+                </svg>
+              </div>
+              <span class="placeholder-caption"
+                >[Insert high-resolution image or diagram here]</span
+              >
+              <span class="placeholder-meta"
+                >Recommended: 1920×1080px or 1200×800px</span
+              >
+            </div>
+
+            <p class="image-caption">
+              [Caption describing the visual content, source, or key takeaway
+              from the image]
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE TYPE: CLOSING -->
+      <!-- PURPOSE: Summary / Call to action / Final statement / Contact -->
+      <section class="slide slide-closing slide-dark" data-slide-type="closing">
+        <div class="slide-content">
+          <header class="slide-header">
+            <span class="slide-label">[Closing Label]</span>
+            <h2 class="slide-title">[Closing Statement or Call to Action]</h2>
+            <p class="slide-subtitle">
+              [Final summary sentence or next steps instruction]
+            </p>
+          </header>
+
+          <div class="slide-body">
+            <div class="closing-content">
+              <div class="contact-placeholder">
+                <p class="contact-item">[Contact Information or Action Item]</p>
+                <p class="contact-item">[Email, URL, or Phone Placeholder]</p>
+              </div>
+
+              <p class="closing-note">
+                [Optional thank you message or disclaimer]
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
