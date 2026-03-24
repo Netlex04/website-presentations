@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bold Presentation Template</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- 
+    ============================================
+    DEVELOPER GUIDANCE: BOLD PRESENTATION TEMPLATE
+    ============================================
+    
+    AVAILABLE SLIDE TYPES:
+    - hero:       Full-screen impact title slide
+    - text:       Centered or left-aligned content block
+    - split:      Two-column layout (content + visual)
+    - cards:      Grid of feature cards (3-4 items)
+    - process:    Numbered steps or timeline
+    - kpi:        Large metric displays
+    - visual:     Full-bleed image/video placeholder
+    - closing:    Final summary or CTA slide
+    
+    HOW TO DUPLICATE A SLIDE:
+    1. Copy any <section class="slide ..."> block
+    2. Paste after existing slides
+    3. Update data-slide-type attribute if needed
+    4. Replace placeholder content inside brackets [Like This]
+    
+    REPLACEABLE CONTENT CLASSES:
+    - .slide-label:     Pill/tag text (uppercase, small)
+    - .slide-title:     Main heading (large, bold)
+    - .slide-subtitle:  Secondary text (medium size)
+    - .slide-body:      Paragraph content area
+    - .card-title:      Feature card headings
+    - .card-text:       Card descriptions
+    - .kpi-value:       Large metric numbers
+    - .kpi-label:       Metric descriptions
+    - .step-title:      Process step names
+    - .step-text:       Step descriptions
+    
+    PLACEHOLDER INDICATORS:
+    Content inside [Brackets] should be replaced with actual 
+    presentation data when generating final decks.
+    
+    ============================================
+    -->
+
+    <!-- Progress Indicator -->
+    <div
+      class="progress-bar"
+      role="progressbar"
+      aria-label="Presentation progress"
+      aria-valuenow="1"
+      aria-valuemin="1"
+      aria-valuemax="8"
+    ></div>
+
+    <!-- Navigation Dots -->
+    <nav class="slide-nav" aria-label="Slide navigation">
+      <button
+        class="nav-dot active"
+        data-slide="0"
+        aria-label="Go to slide 1"
+      ></button>
+      <button
+        class="nav-dot"
+        data-slide="1"
+        aria-label="Go to slide 2"
+      ></button>
+      <button
+        class="nav-dot"
+        data-slide="2"
+        aria-label="Go to slide 3"
+      ></button>
+      <button
+        class="nav-dot"
+        data-slide="3"
+        aria-label="Go to slide 4"
+      ></button>
+      <button
+        class="nav-dot"
+        data-slide="4"
+        aria-label="Go to slide 5"
+      ></button>
+      <button
+        class="nav-dot"
+        data-slide="5"
+        aria-label="Go to slide 6"
+      ></button>
+      <button
+        class="nav-dot"
+        data-slide="6"
+        aria-label="Go to slide 7"
+      ></button>
+      <button
+        class="nav-dot"
+        data-slide="7"
+        aria-label="Go to slide 8"
+      ></button>
+    </nav>
+
+    <!-- Keyboard Instructions (visually hidden) -->
+    <div class="sr-only">
+      Use arrow keys or spacebar to navigate between slides.
+    </div>
+
+    <main class="presentation" id="presentation">
+      <!-- SLIDE TYPE: HERO -->
+      <!-- PURPOSE: Intro / Title / Opening statement -->
+      <section
+        class="slide slide-hero"
+        data-slide-index="0"
+        aria-label="Slide 1: Title"
+      >
+        <div class="slide-content">
+          <!-- COMPONENT: slide-header -->
+          <header class="slide-header">
+            <span class="pill slide-label">[Presentation Label]</span>
+            <h1 class="slide-title display-xl">[Presentation Title]</h1>
+            <p class="slide-subtitle text-large">
+              [Short supporting text that sets the tone and context]
+            </p>
+          </header>
+
+          <!-- Decorative Accent -->
+          <div class="hero-accent" aria-hidden="true">
+            <div class="accent-shape"></div>
+            <div class="accent-shape secondary"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE TYPE: TEXT -->
+      <!-- PURPOSE: Content-heavy slide with focused message -->
+      <section
+        class="slide slide-text"
+        data-slide-index="1"
+        aria-label="Slide 2: Content"
+      >
+        <div class="slide-content container-narrow">
+          <!-- COMPONENT: slide-header -->
+          <header class="slide-header align-left">
+            <span class="pill slide-label">[Section Label]</span>
+            <h2 class="slide-title display-large">[Section Heading]</h2>
+          </header>
+
+          <!-- COMPONENT: content-block -->
+          <div class="slide-body text-flow">
+            <p class="lead-text">
+              [Lead paragraph that introduces the key concept or message. Keep
+              it impactful but concise.]
+            </p>
+            <p>
+              [Secondary supporting text that provides additional context,
+              details, or elaboration on the main point. This area can
+              accommodate 2-3 sentences of explanatory content.]
+            </p>
+            <p>
+              [Optional third paragraph for additional depth or a concluding
+              thought for this section.]
+            </p>
+          </div>
+
+          <!-- Strong divider -->
+          <div class="section-divider" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <!-- SLIDE TYPE: SPLIT / TWO-COLUMN -->
+      <!-- PURPOSE: Content paired with visual or data -->
+      <section
+        class="slide slide-split"
+        data-slide-index="2"
+        aria-label="Slide 3: Two Column Layout"
+      >
+        <div class="slide-content split-layout">
+          <!-- Left: Content -->
+          <div class="split-content-side">
+            <header class="slide-header align-left">
+              <span class="pill slide-label accent-secondary">[Label]</span>
+              <h2 class="slide-title display-medium">[Two-Column Heading]</h2>
+              <p class="slide-subtitle">
+                [Supporting context that bridges content and visual]
+              </p>
+            </header>
+
+            <div class="slide-body">
+              <ul class="feature-list">
+                <li>[Key point one with strong value proposition]</li>
+                <li>[Key point two highlighting differentiation]</li>
+                <li>[Key point three for completeness]</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Right: Visual -->
+          <!-- COMPONENT: visual-placeholder -->
+          <div class="split-visual-side">
+            <div class="visual-placeholder framed">
+              <div class="placeholder-content">
+                <svg
+                  class="placeholder-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  aria-hidden="true"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                  <polyline points="21 15 16 10 5 21"></polyline>
+                </svg>
+                <span>[Insert image or visual here]</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE TYPE: CARDS / FEATURES -->
+      <!-- PURPOSE: Showcase multiple items in grid -->
+      <section
+        class="slide slide-cards"
+        data-slide-index="3"
+        aria-label="Slide 4: Features"
+      >
+        <div class="slide-content">
+          <header class="slide-header">
+            <span class="pill slide-label">[Label]</span>
+            <h2 class="slide-title display-medium">[Features Overview]</h2>
+            <p class="slide-subtitle">[Optional subtitle for context]</p>
+          </header>
+
+          <!-- COMPONENT: cards-grid -->
+          <div class="cards-grid">
+            <!-- COMPONENT: card -->
+            <article class="card elevated">
+              <div class="card-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+              </div>
+              <h3 class="card-title">[Feature title]</h3>
+              <p class="card-text">
+                [Short description text explaining this feature's value]
+              </p>
+            </article>
+
+            <article class="card elevated">
+              <div class="card-icon accent-variant" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="card-title">[Feature title]</h3>
+              <p class="card-text">
+                [Short description text explaining this feature's value]
+              </p>
+            </article>
+
+            <article class="card elevated">
+              <div class="card-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="16" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+              </div>
+              <h3 class="card-title">[Feature title]</h3>
+              <p class="card-text">
+                [Short description text explaining this feature's value]
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE TYPE: PROCESS / STEPS -->
+      <!-- PURPOSE: Sequential information or workflow -->
+      <section
+        class="slide slide-process"
+        data-slide-index="4"
+        aria-label="Slide 5: Process"
+      >
+        <div class="slide-content">
+          <header class="slide-header">
+            <span class="pill slide-label">[Process Label]</span>
+            <h2 class="slide-title display-medium">[Process Title]</h2>
+          </header>
+
+          <!-- COMPONENT: process-steps -->
+          <div class="process-steps">
+            <!-- COMPONENT: step-item -->
+            <div class="step-item">
+              <div class="step-number" aria-hidden="true">01</div>
+              <div class="step-content">
+                <h3 class="step-title">[Step name]</h3>
+                <p class="step-text">
+                  [Step description explaining what happens in this phase]
+                </p>
+              </div>
+            </div>
+
+            <div class="step-divider" aria-hidden="true"></div>
+
+            <div class="step-item">
+              <div class="step-number variant" aria-hidden="true">02</div>
+              <div class="step-content">
+                <h3 class="step-title">[Step name]</h3>
+                <p class="step-text">
+                  [Step description explaining what happens in this phase]
+                </p>
+              </div>
+            </div>
+
+            <div class="step-divider" aria-hidden="true"></div>
+
+            <div class="step-item">
+              <div class="step-number" aria-hidden="true">03</div>
+              <div class="step-content">
+                <h3 class="step-title">[Step name]</h3>
+                <p class="step-text">
+                  [Step description explaining what happens in this phase]
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE TYPE: KPI / METRICS -->
+      <!-- PURPOSE: Data display with high impact -->
+      <section
+        class="slide slide-kpi"
+        data-slide-index="5"
+        aria-label="Slide 6: Metrics"
+      >
+        <div class="slide-content">
+          <header class="slide-header">
+            <span class="pill slide-label accent-highlight">[Label]</span>
+            <h2 class="slide-title display-medium">[Key Metrics]</h2>
+            <p class="slide-subtitle">[Context for the data shown below]</p>
+          </header>
+
+          <!-- COMPONENT: kpi-grid -->
+          <div class="kpi-grid">
+            <!-- COMPONENT: kpi-item -->
+            <div class="kpi-item highlighted">
+              <div class="kpi-value display-xl">[Key Metric]</div>
+              <div class="kpi-label">[Metric Label]</div>
+              <div class="kpi-context">[Optional context or time period]</div>
+            </div>
+
+            <div class="kpi-item">
+              <div class="kpi-value display-large">[Key Metric]</div>
+              <div class="kpi-label">[Metric Label]</div>
+            </div>
+
+            <div class="kpi-item">
+              <div class="kpi-value display-large">[Key Metric]</div>
+              <div class="kpi-label">[Metric Label]</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE TYPE: VISUAL / MEDIA -->
+      <!-- PURPOSE: Full-bleed image or video showcase -->
+      <section
+        class="slide slide-visual"
+        data-slide-index="6"
+        aria-label="Slide 7: Visual"
+      >
+        <div class="slide-content full-bleed">
+          <!-- COMPONENT: visual-placeholder (fullscreen variant) -->
+          <div class="visual-fullscreen">
+            <div class="placeholder-backdrop">
+              <svg
+                class="placeholder-icon large"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1"
+                aria-hidden="true"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                <polyline points="21 15 16 10 5 21"></polyline>
+              </svg>
+              <span>[Insert full-bleed visual here]</span>
+            </div>
+
+            <!-- Overlay Caption -->
+            <div class="visual-overlay">
+              <div class="overlay-content">
+                <span class="pill">[Visual Label]</span>
+                <p>[Visual description or context explaining what is shown]</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE TYPE: CLOSING / SUMMARY -->
+      <!-- PURPOSE: Final impression or call to action -->
+      <section
+        class="slide slide-closing"
+        data-slide-index="7"
+        aria-label="Slide 8: Closing"
+      >
+        <div class="slide-content">
+          <header class="slide-header centered">
+            <span class="pill slide-label accent-highlight">[Final Label]</span>
+            <h2 class="slide-title display-large">[Closing Headline]</h2>
+            <p class="slide-subtitle text-large">
+              [Final supporting message or call to action placeholder]
+            </p>
+          </header>
+
+          <div class="closing-actions">
+            <!-- Placeholder for CTA buttons or contact info -->
+            <div class="action-placeholder">[Insert contact info or CTA]</div>
+          </div>
+
+          <!-- Strong geometric footer accent -->
+          <div class="closing-accent" aria-hidden="true">
+            <div class="accent-bar"></div>
+            <div class="accent-bar secondary"></div>
+            <div class="accent-bar tertiary"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
